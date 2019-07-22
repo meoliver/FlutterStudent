@@ -1,1 +1,6 @@
+注意 注意  注意
+每个文件里有多个widget，  页面显示的只是其中一个，如需要看其他样式，替换方法即可。
+例：每个dart文件里面有_widget1()  _widget2() 等 。。。。
+
+
 本文参考   https://book.flutterchina.club
