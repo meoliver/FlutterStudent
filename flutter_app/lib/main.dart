@@ -10,6 +10,10 @@ import 'SingleChildScrollviewTest.dart';
 import 'ListViewTest.dart';
 import 'GridViewTest.dart';
 import 'CoustomScrollViewTest.dart';
+import 'ScrollControllerTest.dart';
+import 'PaddingTest.dart';
+import 'ConstrainedAndSizedBox.dart';
+import 'DecoratedBoxTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,6 +48,11 @@ class MyApp extends StatelessWidget {
         "/ListViewTest":(BuildContext context) => ListViewTest(),
         "/GridViewTest":(BuildContext context) => GridViewTest(),
         "/CoustomScrollViewTest":(BuildContext context) => CoustomScrollViewTest(),
+        "/ScrollControllerTest":(BuildContext context) => ScrollControllerTest(),
+        "/ParentWidgetC":(BuildContext context) => ParentWidgetC(),
+        "/PaddingTest":(BuildContext context) => PaddingTest(),
+        "/ConstrainedAndSizedBox":(BuildContext context) => ConstrainedAndSizedBox(),
+        "/DecoratedBoxTest":(BuildContext context) => DecoratedBoxTest(),
       },
     );
   }
@@ -95,9 +104,70 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: ParentWidgetC(), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView.separated(
+        separatorBuilder:(BuildContext context, int index) {
+          return Divider(color: Colors.grey);
+        },
+        itemCount: 15,
+        itemBuilder: (context, index) {
+          return getRow(index);
+        },
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  getRow(int index) {
+
+    String _name = getName(index);
+
+    return new GestureDetector(
+      child: ListTile(title: Text("$_name")),
+      onTap: (){
+        Navigator.pushNamed(context, '/$_name');
+
+      },
+    );
+  }
+
+  getName(int index) {
+    String name = '';
+    if (index == 0) {
+      name = "TextTest";
+    } else if (index == 1) {
+      name = "TextFieldtest";
+    } else if (index == 2) {
+      name = "RowColumn";
+    } else if (index == 3) {
+      name = "FlexTest";
+    } else if (index == 4) {
+     name = "WrapFlowTes";
+    } else if (index == 5) {
+      name = "StackPositionedTest";
+    } else if (index == 6) {
+     name = "SingleChildScrollviewTest";
+    } else if (index == 7) {
+      name = "ListViewTest";
+    } else if (index == 8) {
+      name = "GridViewTest";
+    } else if (index == 9) {
+      name = "CoustomScrollViewTest";
+    } else if (index == 10) {
+      name = "ScrollControllerTest";
+    } else if (index == 11) {
+      name = "ParentWidgetC";
+    } else if (index == 12) {
+      name = "PaddingTest";
+    } else if (index == 13) {
+      name = "ConstrainedAndSizedBox";
+    } else if (index == 14) {
+      name = "DecoratedBoxTest";
+    } else if (index == 15) {
+      name = "待续。。。";
+    }
+    return name;
+  }
+
+
 }
 
 

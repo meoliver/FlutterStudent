@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// 这个主要做的是，父widget 子widget 的状态管理示意
+
+
 class ParentWidgetC extends StatefulWidget {
   @override
   _ParentWidgetCState createState() => new _ParentWidgetCState();
@@ -12,15 +15,20 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
     setState(() {
       _active = newValue;
     });
-    Navigator.pushNamed(context, '/CoustomScrollViewTest');
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      child: new TapboxC(
-        active: _active,
-        onChanged: _handleTapboxChanged,
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('父子widget 控制状态'),
+      ),
+      body: new Container(
+        child: new TapboxC(
+          active: _active,
+          onChanged: _handleTapboxChanged,
+        ),
       ),
     );
   }
