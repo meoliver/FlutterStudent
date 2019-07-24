@@ -14,6 +14,9 @@ import 'ScrollControllerTest.dart';
 import 'PaddingTest.dart';
 import 'ConstrainedAndSizedBox.dart';
 import 'DecoratedBoxTest.dart';
+import 'TransformTest.dart';
+import 'ContainerTest.dart';
+import 'ScaffoldTabBarTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,6 +56,9 @@ class MyApp extends StatelessWidget {
         "/PaddingTest":(BuildContext context) => PaddingTest(),
         "/ConstrainedAndSizedBox":(BuildContext context) => ConstrainedAndSizedBox(),
         "/DecoratedBoxTest":(BuildContext context) => DecoratedBoxTest(),
+        "/TransformTest":(BuildContext context) => TransformTest(),
+        "/ContainerTest":(BuildContext context) => ContainerTest(),
+        "/ScaffoldTabBarTest":(BuildContext context) => ScaffoldTabBarTest(),
       },
     );
   }
@@ -108,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
         separatorBuilder:(BuildContext context, int index) {
           return Divider(color: Colors.grey);
         },
-        itemCount: 15,
+        itemCount: 20,
         itemBuilder: (context, index) {
           return getRow(index);
         },
@@ -162,6 +168,16 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (index == 14) {
       name = "DecoratedBoxTest";
     } else if (index == 15) {
+      name = "TransformTest";
+    } else if (index == 16) {
+      name = "ContainerTest";
+    } else if (index == 17) {
+      name = "ScaffoldTabBarTest";
+    } else if (index == 18) {
+      name = "待续。。。";
+    } else if (index == 19) {
+      name = "待续。。。";
+    } else if (index == 20) {
       name = "待续。。。";
     }
     return name;
