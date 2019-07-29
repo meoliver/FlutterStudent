@@ -17,6 +17,8 @@ import 'DecoratedBoxTest.dart';
 import 'TransformTest.dart';
 import 'ContainerTest.dart';
 import 'ScaffoldTabBarTest.dart';
+import 'WillPopScopeTest.dart';
+import 'ThemeTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,6 +61,8 @@ class MyApp extends StatelessWidget {
         "/TransformTest":(BuildContext context) => TransformTest(),
         "/ContainerTest":(BuildContext context) => ContainerTest(),
         "/ScaffoldTabBarTest":(BuildContext context) => ScaffoldTabBarTest(),
+        "/WillPopScopeTest":(BuildContext context) => WillPopScopeTest(),
+        "/ThemeTest":(BuildContext context) => ThemeTest(),
       },
     );
   }
@@ -174,9 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (index == 17) {
       name = "ScaffoldTabBarTest";
     } else if (index == 18) {
-      name = "待续。。。";
+      name = "WillPopScopeTest";
     } else if (index == 19) {
-      name = "待续。。。";
+      name = "ThemeTest";
     } else if (index == 20) {
       name = "待续。。。";
     }

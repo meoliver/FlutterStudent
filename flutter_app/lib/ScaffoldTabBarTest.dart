@@ -12,7 +12,6 @@ class _ScaffoldTabBarTestWidgetstate extends State<ScaffoldTabBarTest> with Sing
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
     _tabController.addListener((){
@@ -25,7 +24,6 @@ class _ScaffoldTabBarTestWidgetstate extends State<ScaffoldTabBarTest> with Sing
 
   }
 
-  // TODO: implement build
   @override
   Widget build(BuildContext context) {
     return _widget1();
@@ -71,7 +69,7 @@ class _ScaffoldTabBarTestWidgetstate extends State<ScaffoldTabBarTest> with Sing
         ),
       ),
       drawer: new MyDrawer(),
-      bottomNavigationBar: _bottomtabbar2(),
+      bottomNavigationBar: _twoBottomTabBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton:FloatingActionButton(
         onPressed: _onAdd,
@@ -106,8 +104,8 @@ class _ScaffoldTabBarTestWidgetstate extends State<ScaffoldTabBarTest> with Sing
   void _onAdd(){
   }
 
-  // bottom tabbar 样式1
-  _bottomtabbar1(){
+  // bottom tab bar 样式1
+  Widget _oneBottomTabBar(){
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home),title: Text('Home')),
@@ -121,22 +119,20 @@ class _ScaffoldTabBarTestWidgetstate extends State<ScaffoldTabBarTest> with Sing
     );
   }
 
-  // bottom tabbar 样式2
-  _bottomtabbar2(){
+  // bottom tab bar 样式2
+  Widget _twoBottomTabBar() {
     return BottomAppBar(
 
       color: Colors.white,
       shape: CircularNotchedRectangle(),
       child: Row(
         children: <Widget>[
-          IconButton(icon: Icon(Icons.home),),
+          IconButton(icon: Icon(Icons.home),onPressed: (){},),
           SizedBox(),
-          IconButton(icon: Icon(Icons.business)),
+          IconButton(icon: Icon(Icons.business),onPressed: (){},),
         ],
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-
       ),
-
     ) ;
   }
 
