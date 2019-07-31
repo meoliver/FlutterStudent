@@ -1,32 +1,22 @@
 import 'package:flutter/material.dart';
 
-class atest extends StatelessWidget {
 
-
+class atest extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('test'),
-      ),
-      body: atestWidget(),
-    );
-  }
+  _atesttState createState() => new _atesttState();
 }
 
-
-
-class atestWidget extends StatefulWidget {
-  @override
-  _atestWidgetState createState() => new _atestWidgetState();
-}
-
-class _atestWidgetState extends State<atestWidget> {
+class _atesttState extends State<atest> {
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return _widget1();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('test'),
+      ),
+      body: _widget1(),
+    );
   }
   _widget1() {
     return null;

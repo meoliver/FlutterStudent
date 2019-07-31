@@ -19,6 +19,8 @@ import 'ContainerTest.dart';
 import 'ScaffoldTabBarTest.dart';
 import 'WillPopScopeTest.dart';
 import 'ThemeTest.dart';
+import 'InheritedWidgetTest.dart';
+import 'ListenerTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -63,6 +65,11 @@ class MyApp extends StatelessWidget {
         "/ScaffoldTabBarTest":(BuildContext context) => ScaffoldTabBarTest(),
         "/WillPopScopeTest":(BuildContext context) => WillPopScopeTest(),
         "/ThemeTest":(BuildContext context) => ThemeTest(),
+        "/InheritedWidgetTest":(BuildContext context) => InheritedWidgetTest(),
+        "/ListenerTest":(BuildContext context) => ListenerTest(),
+
+
+
       },
     );
   }
@@ -118,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         separatorBuilder:(BuildContext context, int index) {
           return Divider(color: Colors.grey);
         },
-        itemCount: 20,
+        itemCount: 25,
         itemBuilder: (context, index) {
           return getRow(index);
         },
@@ -182,6 +189,14 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (index == 19) {
       name = "ThemeTest";
     } else if (index == 20) {
+      name = "InheritedWidgetTest";
+    } else if (index == 21) {
+      name = "ListenerTest";
+    } else if (index == 22) {
+      name = "待续。。。";
+    } else if (index == 23) {
+      name = "待续。。。";
+    } else if (index == 24) {
       name = "待续。。。";
     }
     return name;
