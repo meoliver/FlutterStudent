@@ -21,6 +21,7 @@ import 'WillPopScopeTest.dart';
 import 'ThemeTest.dart';
 import 'InheritedWidgetTest.dart';
 import 'ListenerTest.dart';
+import 'GestureDetectorTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         "/ThemeTest":(BuildContext context) => ThemeTest(),
         "/InheritedWidgetTest":(BuildContext context) => InheritedWidgetTest(),
         "/ListenerTest":(BuildContext context) => ListenerTest(),
+        "/GestureDetectorTest":(BuildContext context) => GestureDetectorTest(),
 
 
 
@@ -193,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (index == 21) {
       name = "ListenerTest";
     } else if (index == 22) {
-      name = "待续。。。";
+      name = "GestureDetectorTest";
     } else if (index == 23) {
       name = "待续。。。";
     } else if (index == 24) {
