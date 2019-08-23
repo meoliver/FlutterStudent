@@ -22,6 +22,10 @@ import 'ThemeTest.dart';
 import 'InheritedWidgetTest.dart';
 import 'ListenerTest.dart';
 import 'GestureDetectorTest.dart';
+import 'AnimationTest.dart';
+import 'HeroAnimationTest.dart';
+import 'StaggerAnimationTest.dart';
+import 'AnimatedSwitcherTest.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,6 +73,10 @@ class MyApp extends StatelessWidget {
         "/InheritedWidgetTest":(BuildContext context) => InheritedWidgetTest(),
         "/ListenerTest":(BuildContext context) => ListenerTest(),
         "/GestureDetectorTest":(BuildContext context) => GestureDetectorTest(),
+        "/AnimationTest":(BuildContext context) => AnimationTest(),
+        "/HeroAnimationTest":(BuildContext context) => HeroAnimationTest(),
+        "/StaggerAnimationTest":(BuildContext context) => StaggerAnimationTest(),
+        "/AnimatedSwitcherTest":(BuildContext context) => AnimatedSwitcherTest(),
 
 
 
@@ -127,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
         separatorBuilder:(BuildContext context, int index) {
           return Divider(color: Colors.grey);
         },
-        itemCount: 25,
+        itemCount: 30,
         itemBuilder: (context, index) {
           return getRow(index);
         },
@@ -144,6 +152,23 @@ class _MyHomePageState extends State<MyHomePage> {
       onTap: (){
         Navigator.pushNamed(context, '/$_name');
 
+        // 使用动画
+//          Navigator.push(
+//            context,
+//              PageRouteBuilder(
+//                transitionDuration: Duration(milliseconds: 500), //动画时间为500毫秒
+//                pageBuilder: (BuildContext context, Animation animation,
+//                    Animation secondaryAnimation) {
+//                  return new FadeTransition(
+//                    //使用渐隐渐入过渡,
+//                    opacity: animation,
+//                    child: StackPositionedTest(), //路由B
+//                  );
+//                },
+//              ),
+//          );
+
+      
       },
     );
   }
@@ -197,8 +222,18 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (index == 22) {
       name = "GestureDetectorTest";
     } else if (index == 23) {
-      name = "待续。。。";
+      name = "AnimationTest";
     } else if (index == 24) {
+      name = "HeroAnimationTest";
+    } else if (index == 25) {
+      name = "StaggerAnimationTest";
+    } else if (index == 26) {
+      name = "AnimatedSwitcherTest";
+    } else if (index == 27) {
+      name = "待续。。。";
+    } else if (index == 28) {
+      name = "待续。。。";
+    } else if (index == 29) {
       name = "待续。。。";
     }
     return name;
